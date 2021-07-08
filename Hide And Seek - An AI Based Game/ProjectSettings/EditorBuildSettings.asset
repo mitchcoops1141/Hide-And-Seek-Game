@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 6e6505540266a3945b53b3794c430557
+  - enabled: 1
+    path: Assets/Scenes/HiderLevels/HiderLevel1.unity
+    guid: bdd3547d6437b484ea582b2198baee2b
   m_configObjects: {}

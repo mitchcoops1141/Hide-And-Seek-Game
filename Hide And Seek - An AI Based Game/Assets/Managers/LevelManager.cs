@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance = null;
 
     [Header("Player Conection")]
-    public TempPlayer player;
+    public Player_Cs player;
 
     [Header("Seeker Conenctions")]
     public Seeker[] seekers;
@@ -20,6 +21,9 @@ public class LevelManager : MonoBehaviour
     [Header("Round Starting Timer")]
     [SerializeField] private TextMeshProUGUI startTimerText;
     private int startTimer = 3;
+
+    [Header("Type of Level (S or H)")]
+    public bool isSeeker;
 
     public void Awake()
     {
@@ -67,14 +71,39 @@ public class LevelManager : MonoBehaviour
         player.canFunction = false;
     }
 
-    void Win()
+    IEnumerator Win()
     {
+        startTimerText.text = "YOU WIN!";
 
+        if (isSeeker)
+            GameManager.instance.seekerLevelIndex++;
+        else
+            GameManager.instance.hiderLevelIndex++;
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene("MenuScene");
     }
 
-    void Lose()
+    public void Lose()
     {
+        StartCoroutine("LoseUI");
+    }
 
+    IEnumerator LoseUI()
+    {
+        EndGame();
+        startTimerText.text = "FINISH";
+
+        yield return new WaitForSeconds(1f);
+
+        
+
+        startTimerText.text = "YOU LOST";
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene("MenuScene");
     }
 
     IEnumerator StartTimer()
@@ -119,5 +148,7 @@ public class LevelManager : MonoBehaviour
         roundTimerText.text = "0";
         startTimerText.text = "FINISH";
         EndGame();
+        yield return new WaitForSeconds(1f);
+        StartCoroutine("Win");
     }
 }

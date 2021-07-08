@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Goal
   - Wall
+  - Seeker
   layers:
   - Default
   - TransparentFX
