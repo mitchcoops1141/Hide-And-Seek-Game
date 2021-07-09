@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: bc165ac997fdd9e4f923dca3dd0ffeb1
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 6e6505540266a3945b53b3794c430557
-  - enabled: 1
-    path: Assets/Scenes/HiderLevels/HiderLevel1.unity
+    path: Assets/Scenes/HiderLevels/HiderLevel1/HiderLevel1.unity
     guid: bdd3547d6437b484ea582b2198baee2b
+  - enabled: 1
+    path: Assets/Scenes/HiderLevels/HiderLevel2/HiderLevel2.unity
+    guid: 615426aabc8304a4dbac389d5121ae90
+  - enabled: 1
+    path: Assets/Scenes/HiderLevels/HiderLevel3.unity
+    guid: 412c6d12e88f0e44385b5e94aa28d623
   m_configObjects: {}
