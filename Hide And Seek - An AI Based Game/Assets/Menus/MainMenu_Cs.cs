@@ -30,9 +30,13 @@ public class MainMenu_Cs : MonoBehaviour
         FindObjectOfType<AudioManager_Cs>().Play("Select");
     }
 
+    public void GobackSound()
+    {
+        FindObjectOfType<AudioManager_Cs>().Play("GoBack");
+    }
+
     public void MainMenuScene()
     {
-        PlaySelectSound();
         Textures.SetActive(true);
         mainMenuScreen.SetActive(true);
         creditsScreen.SetActive(false);
@@ -41,7 +45,6 @@ public class MainMenu_Cs : MonoBehaviour
 
     public void CreditsScreen()
     {
-        PlaySelectSound();
         Textures.SetActive(false);
         mainMenuScreen.SetActive(false);
         creditsScreen.SetActive(true);
