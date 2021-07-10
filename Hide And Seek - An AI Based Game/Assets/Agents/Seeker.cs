@@ -39,8 +39,6 @@ public class Seeker : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        //agent pos
-        //target pos
         sensor.AddObservation(transform.position);
         if (LevelManager.instance.player)
             sensor.AddObservation(LevelManager.instance.player.transform.position);
