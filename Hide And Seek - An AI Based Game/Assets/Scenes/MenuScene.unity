@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2295,14 +2295,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 638206197}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 133031463}
         m_TargetAssemblyTypeName: MainMenu_Cs, Assembly-CSharp
-        m_MethodName: SeekerGameMode
+        m_MethodName: GoMehSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8294,7 +8294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
       propertyPath: sounds.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
       propertyPath: sounds.Array.data[1].loop
@@ -8309,7 +8309,19 @@ PrefabInstance:
       value: GoBack
       objectReference: {fileID: 0}
     - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b688c93f204ad354085681bfba75aa6f, type: 3}
+    - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: Meh
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
       propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
@@ -8318,6 +8330,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
       propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974705870836294395, guid: 270d8e8d7e10a7443a423a3e2cac07b8, type: 3}
+      propertyPath: sounds.Array.data[3].volume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

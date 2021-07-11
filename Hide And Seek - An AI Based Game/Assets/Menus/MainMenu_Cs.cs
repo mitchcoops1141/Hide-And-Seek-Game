@@ -35,6 +35,11 @@ public class MainMenu_Cs : MonoBehaviour
         FindObjectOfType<AudioManager_Cs>().Play("GoBack");
     }
 
+    public void GoMehSound()
+    {
+        FindObjectOfType<AudioManager_Cs>().Play("Meh");
+    }
+
     public void MainMenuScene()
     {
         Textures.SetActive(true);
