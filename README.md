@@ -10,4 +10,7 @@ Then navigate to this github folder. click on ML-Agents API -> API -> Package
 
 this will install the package into unity and resolve any issues.
 
+
+If you just want to launch the build of the game select the folder "Prototype Builds".
+
 Thankyou
