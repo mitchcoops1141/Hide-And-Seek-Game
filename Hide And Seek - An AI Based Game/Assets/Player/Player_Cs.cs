@@ -6,11 +6,20 @@ public class Player_Cs : MonoBehaviour
 {
     NavMeshAgent agent;
     [HideInInspector] public bool canFunction = false;
+    public RuntimeAnimatorController animatorController;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        //anim = GetComponentInChildren<Animator>();
+
+        GameObject mesh = Instantiate(GameObject.FindGameObjectWithTag("MeshSaver").GetComponent<MeshSaver>().GetMesh(), transform);
+        mesh.SetActive(true);
+        mesh.GetComponent<Animator>().runtimeAnimatorController = animatorController;
+        mesh.transform.localPosition = Vector3.zero;
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -29,7 +38,11 @@ public class Player_Cs : MonoBehaviour
                 }
             }
         }
-            //agent.speed = 0;
+        //agent.speed = 0;
+        anim.SetFloat("MoveSpeed", agent.velocity.magnitude);
+        transform.GetChild(0).localPosition = Vector3.zero;
+        transform.GetChild(0).localRotation = Quaternion.Euler(0, 0, 0);
+        
     }
 
     void SeekerCollision()

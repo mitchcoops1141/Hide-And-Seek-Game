@@ -18,10 +18,22 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
+
+
+        for (int i = 0; i < totalCharacters; i++)
+        {
+            charUnlocks.Add(false);
+        }
+
+        charUnlocks[0] = true;
+
     }
 
     public int seekerLevelIndex = 1;
     public int hiderLevelIndex = 1;
+
+    public int totalCharacters = 14;
+    public List<bool> charUnlocks = new List<bool>();
 
     // Start is called before the first frame update
     void Start()
