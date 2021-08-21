@@ -8,13 +8,17 @@ using Unity.MLAgents.Actuators;
 public class Seeker : Agent
 {
     public float speed = 5f;
+    Transform hider;
 
     float cacheSpeed;
+    Animator anim;
 
     private void Start()
     {
         cacheSpeed = speed;
         speed = 0;
+        anim = GetComponentInChildren<Animator>();
+        hider = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void BeginSeeking()
@@ -26,6 +30,12 @@ public class Seeker : Agent
     {
         cacheSpeed = speed;
         speed = 0;
+    }
+
+    private void Update()
+    {
+        anim.SetFloat("Speed", speed);
+        transform.LookAt(new Vector3(hider.position.x, transform.position.y, hider.position.z));
     }
 
     public override void OnEpisodeBegin()
